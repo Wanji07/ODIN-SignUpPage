@@ -1,0 +1,214 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #FF7F50;
+    --secondary: #FFFFFF;
+    --box-shadow: 0px 2px 1px 0.5px rgba(0, 0, 0, 0.2);
+}
+
+@font-face {
+    font-family: 'Norse';
+    src: url(/Norse-Bold.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-section {
+    width: 200vh;
+    height: 100vh;
+    background-color: var(--primary);
+    overflow: hidden;
+}
+
+#image-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#logo {
+    margin-right: 20px;
+}
+
+.logo-background {
+    position: relative;
+    top: -90%;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 50%);
+    padding: 25px;
+}
+
+.logo-name {
+    font-family: 'Norse', sans-serif;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.form-section {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    padding: 15px;
+}
+
+.form-section-1 p{
+    width: 90%;
+    text-wrap: wrap;
+    margin: auto;
+    font-size: 15px;
+}
+
+.form-section-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.form-divider-1, .form-divider-2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.form-divider-1 input, .form-divider-2 input {
+    margin-bottom: 24px;
+    padding: 10px;
+    font-size: 16px;
+    z-index: 1;
+    border: solid;
+    border-width: 0.2px;
+    border-color: var(--primary);
+}
+
+.form-divider-1 input:focus, .form-divider-2 input:focus {
+   background-color: #FFFFFF;
+   outline: none;
+}
+
+.form-divider-1 label, .form-divider-2 label {
+    position: relative;
+    top: 0%;
+    left: 5px;
+    transform: translateY(-3.4rem);
+    transition: 0.3s;
+    z-index: 1;
+    color: var(--primary);
+    user-select: none;   
+}
+
+.form-divider-1 input:focus + label, .form-divider-1 input:valid + label,
+.form-divider-2 input:focus + label, .form-divider-2 input:valid + label {
+    transform: translateY(-4.5rem);
+    background-color: var(--secondary);
+    width: max-content;
+    padding: 0.5px;
+    font-size: 11px;
+}
+
+#form input:invalid {
+    border-color: red;
+    border-width: 0.2px;
+}
+
+.form-section-3 {
+    margin-top: -1rem;
+}
+
+#submit:hover {
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+
+#submit {
+    background-color: var(--primary);
+    color: var(--secondary);
+    width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 20px;
+    transition: 0.3s ease-in-out;
+}
+
+#submit:disabled {
+    background-color: var(--primary);
+    color: var(--secondary);
+    width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 20px;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#errorMessage {
+    display: none;
+    opacity: 0;
+    color: red;
+    font-size: 12px;
+    margin-top: -10px;
+}
+
+.error-valid {
+    position: absolute;
+    bottom: 20px;
+    display: block;
+    opacity: 1;
+    color: red;
+    font-size: 12px;
+    margin-top: -10px;
+}
+
+#checkPassword {
+    background-color: inherit;
+    position: absolute;
+    top: 11.1rem;
+    left: 11rem;
+    width: max-content;
+    padding: 0.5px;
+    z-index: 2;
+    border: none;
+    font-size: 17px;
+}
+
+#hidePassword {
+    display: none;
+    opacity: 0;
+    background-color: inherit;
+    position: absolute;
+    top: 11.1rem;
+    left: 11rem;
+    width: max-content;
+    padding: 0.5px;
+    z-index: 2;
+    border: none;
+    font-size: 17px;
+}
